@@ -22,7 +22,7 @@ number1, number2 = [int(n) for n in task.split() if n.isdigit()]
 
 result = round(math.sqrt(number1) * number2, 2)
 
-sock.sendall(f"{result:.2f}".encode('utf-8'))
+sock.sendall(f"{result:.2f}\n".encode('utf-8'))
 
 print(f'Result sent: sqrt({number1})*{number2}={result}')
 resp = sock.recv(1024).decode('utf-8')  # Adjust buffer size if needed
